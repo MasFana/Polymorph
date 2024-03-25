@@ -1,0 +1,14 @@
+/home/masfana/Documents/Polymorph/bin/Debug/net8.0/Polymorph
+/home/masfana/Documents/Polymorph/bin/Debug/net8.0/Polymorph.deps.json
+/home/masfana/Documents/Polymorph/bin/Debug/net8.0/Polymorph.runtimeconfig.json
+/home/masfana/Documents/Polymorph/bin/Debug/net8.0/Polymorph.dll
+/home/masfana/Documents/Polymorph/bin/Debug/net8.0/Polymorph.pdb
+/home/masfana/Documents/Polymorph/obj/Debug/net8.0/Polymorph.GeneratedMSBuildEditorConfig.editorconfig
+/home/masfana/Documents/Polymorph/obj/Debug/net8.0/Polymorph.AssemblyInfoInputs.cache
+/home/masfana/Documents/Polymorph/obj/Debug/net8.0/Polymorph.AssemblyInfo.cs
+/home/masfana/Documents/Polymorph/obj/Debug/net8.0/Polymorph.csproj.CoreCompileInputs.cache
+/home/masfana/Documents/Polymorph/obj/Debug/net8.0/Polymorph.dll
+/home/masfana/Documents/Polymorph/obj/Debug/net8.0/refint/Polymorph.dll
+/home/masfana/Documents/Polymorph/obj/Debug/net8.0/Polymorph.pdb
+/home/masfana/Documents/Polymorph/obj/Debug/net8.0/Polymorph.genruntimeconfig.cache
+/home/masfana/Documents/Polymorph/obj/Debug/net8.0/ref/Polymorph.dll
