@@ -6,30 +6,29 @@ class Program
 {
     public static void Main(string[] args)
     {
-        //Lingkaran bulat = new Lingkaran(12);
-        //bulat.Gambar();
-        //Persegi kotak = new Persegi(10, 10);
-        //kotak.Gambar();
-        //PersegiPanjang persegiPanjang = new PersegiPanjang(10, 20);
-        //persegiPanjang.Gambar();
-        //JajarGenjang jajarGenjang = new JajarGenjang(10, 20);
-        //jajarGenjang.Gambar();
+        Lingkaran bulat = new Lingkaran(12);
+        bulat.Gambar();
+        Persegi kotak = new Persegi(10, 10);
+        kotak.Gambar();
+        PersegiPanjang persegiPanjang = new PersegiPanjang(10, 20);
+        persegiPanjang.Gambar();
+        JajarGenjang jajarGenjang = new JajarGenjang(10, 20);
+        jajarGenjang.Gambar();
 
-       /* Debit debitaku = new Debit("nopla", "732748309");
-        debitaku.Penyetoran(50000);
-        debitaku.CekSaldo();*/
-        //Menggambar satuASADADA = new Menggambar();
+        Debit debit1 = new Debit("nopla", "732748309");
+        debit1.Penyetoran(50000);
+        debit1.CekSaldo();
+       
 
-        Elektronik laptop = new Elektronik("asus x44", 10000);
+        Elektronik laptop = new Elektronik("asus x4w4", 10000);
+        laptop.Ongkir(3);
         Pakaian baju = new Pakaian("gucci", 50000);
+        baju.Ongkir(1);
         Buku cerita = new Buku("malin kundang", 20000);
+        cerita.Ongkir(1);
         onlineshop.GetAllProducts();
         
-        //cart.AddItem(laptop);
-        //decimal total = cart.CalculateTotal();
-        //Console.WriteLine("Total Harga: " + total.ToString("C"));
-
-        //Console.ReadLine();
+   
 
 
 
@@ -46,15 +45,16 @@ public class onlineshop
     public int ongkir;
     public int jarak;
     public string cart;
-    private static List<onlineshop> allProducts = new List<onlineshop>();
-
-
+   
+    private static onlineshop[] allProducts = new onlineshop[100];
+    private static int productCount = 0;
     public onlineshop(string name, decimal price, string category)
     {
         Name = name;
         Price = price;
-        Console.WriteLine($"+ini adalah {name},kategorinya: \n {category},harganya{price}+");
-        allProducts.Add(this);
+        Console.WriteLine($"|> Nama barang : {name},|> Jenis: {category},|> Harga: {price}");
+       
+        allProducts[productCount++] = this;
 
 
     }
@@ -63,16 +63,20 @@ public class onlineshop
         Console.WriteLine($"{ongkir*jarak}");
     }
 
-    public static List<onlineshop> GetAllProducts()
+    public static onlineshop[]GetAllProducts()
     {
         decimal total = 0;
         int o = 1;
-        foreach (var i in allProducts) {
-            Console.WriteLine($"{o}.{i.Name} {i.Price}");
-            total = (int)(total + i.Price);
+       
+        Console.WriteLine("\n");
+        for (int i = 0; i < productCount; i++)
+        {
+            Console.WriteLine($"{o}.[{allProducts[i].Name}], [Rp: {allProducts[i].Price}]");
+            total = (int)(total + allProducts[i].Price);
             o++;
-                }
-        Console.WriteLine($"Total belanjaan di keranjang anda adalah {o-1} item dengan Total Rp:{total}");
+        }
+        Console.WriteLine("\n");
+        Console.WriteLine($"-----Total belanjaan di keranjang anda adalah {o-1} item dengan Total Rp:{total}-----");
 
         return allProducts;
     }
@@ -85,9 +89,8 @@ class Elektronik : onlineshop
     }
     public override void Ongkir(double jarak)
     {
-        base.ongkir = 10000;
-        base.Ongkir(jarak);
-        Console.WriteLine(ongkir*jarak);
+        ongkir = 10000;
+        Console.WriteLine($"biaya ongkir: ", ongkir*jarak);
     }
 }
 class Pakaian : onlineshop
@@ -98,7 +101,7 @@ class Pakaian : onlineshop
     }
     public override void Ongkir(double jarak)
     {
-        base.ongkir = 8000;
+        ongkir = 8000;
         base.Ongkir(1);
     }
   
@@ -109,40 +112,13 @@ class Buku : onlineshop
     { }
     public override void Ongkir(double jarak)
     {
-        base.ongkir = 7000;
+        ongkir = 7000;
         base.Ongkir(1);
 
 
     }
 }
-// Kelas keranjang belanja
-/*public class ShoppingCart
-{
-    private onlineshop item;
 
-    public ShoppingCart()
-    {
-        item = null;
-    }
-
-    public void AddItem(onlineshop product)
-    {
-        item = product;
-    }
-
-    public decimal CalculateTotal()
-    {
-        if (item != null)
-        {
-            return item.Price;
-        }
-        else
-        {
-            return 0;
-        }
-    }
-}
-*/
 class Menggambar
     {
         protected int panjang;
